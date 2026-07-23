@@ -21,13 +21,22 @@ app = Flask(__name__)
 # ---------------------------------------------------------------------------
 
 BOT_PATHS = {
-    "The Aggressor":    "bots/aggressor/bot.py",
-    "The Mathematician":"bots/mathematician/bot.py",
-    "The Shark":        "bots/shark/bot.py",
-    "Template Bot A":   "bots/template/bot.py",
-    "Pot-Odds Bot B":   "bots/ref_bot_2/bot.py",
-    "Template Bot C":   "bots/template/bot.py",
+    "Risk 1":        "bots/no_monte/bot.py",
+    "Risk 2":        "bots/risk/bot.py",
+    "Opponent":    "bots/opponent_targeting/bot.py",
+    "Base Bot":     "bots/base_bot/bot.py",
+    "Shark":  "bots/shark/bot.py",
+    "Aggregation": "bots/aggregation/bot.py",
 }
+
+# BOT_PATHS = {
+#     "The Aggressor":    "bots/aggressor/bot.py",
+#     "The Mathematician":"bots/mathematician/bot.py",
+#     "The Shark":        "bots/shark/bot.py",
+#     "Template Bot A":   "bots/template/bot.py",
+#     "Stack Depth":   "bots/stack_depth/bot.py",
+#     "My bot":   "bots/risk/bot.py",
+# }
 
 state = {
     "log":        [],   # event log (SSE stream)
@@ -377,4 +386,4 @@ if __name__ == "__main__":
     print("  Open:  http://localhost:5000")
     print("  Bots:  ", ", ".join(BOT_PATHS.keys()))
     print("="*50 + "\n")
-    app.run(debug=False, threaded=True, port=5000)
+    app.run(debug=False, threaded=True, port=5001)
